@@ -2,8 +2,6 @@
 
 @section('content')
 
-
-
 <div class="column col-3">
 <h3> Edit a profile</h3>
 @if ($errors->any())
