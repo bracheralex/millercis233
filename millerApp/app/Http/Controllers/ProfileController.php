@@ -40,7 +40,7 @@ class ProfileController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'email' => 'required',
-            'phone-number' => 'required'
+            'phone_number' => 'required'
          ]);
  
         // \App\Models\Character::create($this->validatedData($request));

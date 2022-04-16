@@ -22,8 +22,8 @@
       <td>{{$profile->last_name}}</td>
       <td>{{$profile->email}}</td>
       <td>{{$profile->phone_number}}</td>
-      <td>{{$profile->updated_at}}</td>
-      <td>{{$profile->created_at}}</td>
+      <!-- <td>{{$profile->updated_at}}</td>
+      <td>{{$profile->created_at}}</td> -->
    
     </tr>
   </tbody>

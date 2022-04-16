@@ -23,9 +23,9 @@ class ProfileSeeder extends Seeder
                 'first_name' => $faker->name,
                 'last_name' => $faker->lastName(),
                 'email' => $faker->email(),
-                'phone_number' => $faker->phoneNumber(),
-                'updated_at' => $faker->dateTime,
-                'created_at' => $faker->dateTime
+                'phone_number' => $faker->phoneNumber()
+                // 'updated_at' => $faker->dateTime,
+                // 'created_at' => $faker->dateTime
            ]);
        }
     }

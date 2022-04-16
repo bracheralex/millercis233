@@ -19,9 +19,9 @@ return new class extends Migration
                     $table->string('last_name');
                     $table->string('email');
                     $table->string('phone_number');  
-                    $table->string('updated_at');  
-                    $table->string('created_at');   
-            $table->timestamps();
+            //         $table->string('updated_at');  
+            //         $table->string('created_at');   
+            // $table->timestamps();
         });
     }
 
