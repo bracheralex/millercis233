@@ -6,7 +6,16 @@
 
 <table class="table table-striped table-hover">
 
- <thead>
+<p>{{$profile->first_name}}</p>
+
+Handles:
+<ul>
+  @foreach ($profile->handles as $handle)
+  <li>{{$handle->social_name}} - {{$handle->name}}</li>
+  @endforeach
+</ul>
+
+ <!-- <thead>
     <tr>
       <th>First Name</th>
       <th>Last Name</th>
@@ -22,12 +31,10 @@
       <td>{{$profile->last_name}}</td>
       <td>{{$profile->email}}</td>
       <td>{{$profile->phone_number}}</td>
-      <!-- <td>{{$profile->updated_at}}</td>
-      <td>{{$profile->created_at}}</td> -->
    
     </tr>
   </tbody>
-</table>
+</table> -->
 
 <p>
 <a href= "{{ route('profiles.index') }}">All Profiles</a>    
