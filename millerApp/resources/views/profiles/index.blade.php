@@ -10,12 +10,10 @@
 
  <thead>
     <tr>
-      <th>First name</th>
-      <th>Last name</th>
+      <th>First Name</th>
+      <th>Last Name</th>
       <th>Email</th>
-       
-        <th>Phone Number</th>
-            <th></th>
+      <th>Phone Number</th>
             <th></th>
 
     </tr>
@@ -26,7 +24,7 @@
       <td>{{$profile->first_name}}</td>
       <td>{{$profile->last_name}}</td>
       <td>{{$profile->email}}</td>
-          <td>{{$profile->phone_number}}</td>
+      <td>{{$profile->phone_number}}</td>
             <!-- <td>{{$profile->updated_at}}</td>
               <td>{{$profile->created_at}}</td> -->
            <td><a href="{{ route('profiles.show', $profile->id) }}">Show Detail</a></td>

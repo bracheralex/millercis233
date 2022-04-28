@@ -16,8 +16,7 @@ return new class extends Migration
         Schema::create('handles', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-              $table->string('profile_id');
-
+            $table->string('user_id');
             $table->timestamps();
         });
     }
