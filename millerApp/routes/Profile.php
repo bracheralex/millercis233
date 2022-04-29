@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -8,14 +8,5 @@ class User extends Model
 
 {
 
-    // protected $fillable = ['name', 'email', 'password'];
-
-    public function user() {
-        return $this ->belongsTo(User::class);
-    }
-
-    public function handles(){
-        return $this->hasMany(Handle::class);
-    }
-    
+    protected $fillable = ['first_name', 'last_name', 'email', 'phone_number', 'updated_at', 'created_at'];
 }

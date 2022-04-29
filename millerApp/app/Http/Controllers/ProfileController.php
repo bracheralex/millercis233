@@ -57,7 +57,7 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-               $profile = \App\Models\Profile::with('handles')->findOrFail($id);
+               $profile = \App\Models\Profile::findOrFail($id);
        return view ('profiles.show', ['profile' => $profile ]);
     }
 
