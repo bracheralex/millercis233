@@ -3,8 +3,10 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use \App\Models\Profile;
 
 class ProfileSeeder extends Seeder
 {
@@ -17,6 +19,8 @@ class ProfileSeeder extends Seeder
     {
               \App\Models\Profile::query()->delete();
 
+                  $userIds = \App\Models\User::pluck('id');
+
        $faker = \Faker\Factory::create();
 
        foreach (range(1,100) as $number){
@@ -25,15 +29,13 @@ class ProfileSeeder extends Seeder
                 'last_name' => $faker->lastName(),
                 'email' => $faker->email(),
                 'phone_number' => $faker->phoneNumber(),
-                // 'user_id' => $faker->numberBetween($min = 1, $max = 900)
-                // 'updated_at' => $faker->dateTime,
-                // 'created_at' => $faker->dateTime
+                'user_id' => $userIds->random()
+           
+    //             //   $table->timestamps()
 
-                //   $table->timestamps()
+    //             // 'password' => Hash::make($faker->password)
 
-
-
-                // 'password' => Hash::make($faker->password)
+  //   Factory(\App\Models\ProfileFactory::class, 100)->create();
            ]);
        }
     }
