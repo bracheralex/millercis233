@@ -17,4 +17,9 @@ class Profile extends Model
           public function handles(){
         return $this->hasMany(Handle::class);
     }
+
+            public function companies(){
+        return $this->belongsToMany(Company::class);
+    }
+
 }
