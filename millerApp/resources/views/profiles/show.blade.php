@@ -16,6 +16,7 @@
       <th>Last Name</th>
       <th>Email</th>
       <th>Phone number</th>
+      <th>Handles:</th>
             <th></th>
     </tr>
   </thead>
@@ -26,17 +27,20 @@
       <td>{{$profile->last_name}}</td>
       <td>{{$profile->email}}</td>
       <td>{{$profile->phone_number}}</td>
+
+
+  @foreach($profile->handles as $handle)
+  <td>{{$handle->social_name}}:
+      {{$handle->name}}</td>
+     <td> {{$handle->email}} </td>
+  @endforeach
+
    
     </tr>
   </tbody>
 </table>
+<!-- if count($profile->handles > 0) -->
 
-Handles:
-<ul>
-  @foreach($profile->handles as $handle)
-  <li>{{$handle->social_name}} - {{$handle->name}} - {{$handle->email}} </li>
-  @endforeach
-</ul>
 
 <p>
 <a href= "{{ route('profiles.index') }}">All Profiles</a>    

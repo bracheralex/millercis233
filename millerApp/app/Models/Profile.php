@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Profile extends Model
 {
     use HasFactory;
-           protected $fillable = ['first_name', 'last_name', 'email', 'phone_number'];
+           protected $fillable = ['first_name', 'last_name', 'email', 'phone_number','social_name','name'];
 
        public function user() {
            return $this->belongsTo(User::class);
@@ -17,4 +17,9 @@ class Profile extends Model
           public function handles(){
         return $this->hasMany(Handle::class);
     }
+
+            public function companies(){
+        return $this->belongsToMany(Company::class);
+    }
+
 }

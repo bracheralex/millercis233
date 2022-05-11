@@ -12,4 +12,12 @@
               <label class="form-label" for ="phone_number">Phone Number</label>
            <input class="form-input" type="text" name="phone_number" id="phone_number" value="{{old('phone_number', $profile->phone_number)}}" ></label>
 
+               <label class="form-label" for ="social_name">Social Account</label>
+           <input class="form-input" type="text" name="social_name" id="social_name" value="{{old('social_name', $profile->social_name)}}" ></label>
+
+                    <label class="form-label" for ="name">User Name for Social Account</label>
+           <input class="form-input" type="text" name="name" id="name" value="{{old('name', $profile->name)}}" ></label>
+
+
+
            </select>
