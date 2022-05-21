@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class ProfileController extends Controller
 {
@@ -12,9 +14,19 @@ class ProfileController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+    // public function index(Request $request)
     {
+        // $sortBy = $request->query('sortBy') ?? 'first_name';
+        // $direction = $request->query('direction') ?? 'asc';
+
+        // //EagerLoading handles handles
+        //     $profiles = Profile::with('handles')->orderBy($sortBy, $direction);
+
              $profiles = \App\Models\Profile::paginate(10);
        return view('profiles.index', ['profiles' => $profiles]);
+
+    //    $groups = \App\Models\Group::paginate(10);
+    //    return view('groups.index', ['groups' => $groups]);
     }
 
     /**
