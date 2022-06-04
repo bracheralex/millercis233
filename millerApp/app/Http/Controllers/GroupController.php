@@ -57,6 +57,10 @@ class GroupController extends Controller
     {
                 $group = \App\Models\Group::with('profiles')->findOrFail($id);   
        return view ('groups.show', ['group' => $group ]);
+
+      //             $profile = \App\Models\Profile::with('groups')->findOrFail($id);
+      //  return view ('profiles.show', ['profile' => $profile ]);
+
     }
 
     /**

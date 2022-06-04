@@ -3,16 +3,16 @@
 
 <h3>Show Group Detail</h3>
 
-
 <table class="table table-striped table-hover">
 
  <thead>
     <tr>
+       <th>Groups</th>
       <th>First Name</th>
       <th>Last Name</th>
       <th>Email</th>
       <th>Phone number</th>
-      <th>Groups</th>
+      
             <th></th>
     </tr>
   </thead>
@@ -26,19 +26,18 @@
 </div>
 @endif
       
-  @foreach($profiles as $profile)
-  <td>{{$profile->first_name}}</td>
-  <td>{{$profile->last_name}}</td>
- <td> {{$profile->email}} </td>
-  <td> {{$profile->phone_number}} </td>
-  @endforeach 
+   <tr>
+     <td>{{$group->name}}</td>
+  @foreach($group->profiles as $profile)
+   
+   
+     <td> {{$profile->first_name}} </td>
+          <td>{{$profile->last_name}}</td>
+      <td>{{$profile->email}}</td>
+      <td>{{$profile->phone_number}}</td>
 
-  @foreach($profile->groups as $group)
-  <td> {{$group->name}}</td>
   @endforeach
-               <!-- if count($profile->groups > 0){
-  echo "No Groups found";
-} -->
+
 
 
     </tr>

@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             ProfileSeeder::class,
             HandleSeeder::class,
-            GroupSeeder::class
+            GroupSeeder::class,
+            GroupProfile::class
         ]);
        
     }

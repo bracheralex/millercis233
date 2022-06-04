@@ -37,21 +37,15 @@
       <td>{{$profile->email}}</td>
       <td>{{$profile->phone_number}}</td>
 
+ 
   @foreach($profile->handles as $handle)
   <td>{{$handle->social_name}}:{{$handle->name}}</td>
  <td> {{$handle->email}} </td>
   @endforeach
-               <!-- if count($profile->handles > 0){
-  echo "No Handles found";
-} -->
 
   @foreach($profile->groups as $group)
   <td> {{$group->name}}</td>
   @endforeach
-               <!-- if count($profile->groups > 0){
-  echo "No Groups found";
-} -->
-
 
     </tr>
   </tbody>
