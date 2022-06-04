@@ -22,4 +22,9 @@ class Profile extends Model
         return $this->belongsToMany(Company::class);
     }
 
+                public function groups(){
+        return $this->belongsToMany(Group::class);
+    }
+
 }
+                     

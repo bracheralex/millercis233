@@ -1,23 +1,18 @@
 @extends ('profiles.layout')
 @section ('content')
 
-<h3>Show Profile Detail</h3>
-
+<h3>Show Group Detail</h3>
 
 <table class="table table-striped table-hover">
 
-<!-- <p>{{$profile->first_name}}</p>
- <td>{{$profile->email}}</td> -->
-
-
  <thead>
     <tr>
+       <th>Groups</th>
       <th>First Name</th>
       <th>Last Name</th>
       <th>Email</th>
       <th>Phone number</th>
-     <th>Handles</th>
-      <th>Groups</th>
+      
             <th></th>
     </tr>
   </thead>
@@ -30,22 +25,20 @@
   @endforeach
 </div>
 @endif
-
-    <tr>
-      <td>{{$profile->first_name}}</td>
-      <td>{{$profile->last_name}}</td>
+      
+   <tr>
+     <td>{{$group->name}}</td>
+  @foreach($group->profiles as $profile)
+   
+   
+     <td> {{$profile->first_name}} </td>
+          <td>{{$profile->last_name}}</td>
       <td>{{$profile->email}}</td>
       <td>{{$profile->phone_number}}</td>
 
- 
-  @foreach($profile->handles as $handle)
-  <td>{{$handle->social_name}}:{{$handle->name}}</td>
- <td> {{$handle->email}} </td>
   @endforeach
 
-  @foreach($profile->groups as $group)
-  <td> {{$group->name}}</td>
-  @endforeach
+
 
     </tr>
   </tbody>

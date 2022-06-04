@@ -4,6 +4,7 @@
 <h3> Profiles </h3>
 <a class="btn btn-primary" href="{{route('profiles.create')}}">Create </a>
 
+
 {{ $profiles->links() }}
 
 <table class="table table-striped table-hover">

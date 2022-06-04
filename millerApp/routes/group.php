@@ -8,7 +8,9 @@ class User extends Model
 
 {
 
-    // protected $fillable = ['name', 'email', 'password'];
+        public function profiles(){
+        return $this->hasMany(Profile::class);
+    }
 
     public function user() {
         return $this ->belongsTo(User::class);
@@ -18,8 +20,4 @@ class User extends Model
         return $this->hasMany(Handle::class);
     }
 
-       public function groups(){
-        return $this->hasMany(Group::class);
-    }
-    
 }
