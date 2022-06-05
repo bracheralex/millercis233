@@ -43,6 +43,11 @@
  <td> {{$handle->email}} </td>
   @endforeach
 
+  @if($profile->handles === 0 ){
+   echo "No handles found"
+  }
+  @endif
+
   @foreach($profile->groups as $group)
   <td> {{$group->name}}</td>
   @endforeach
