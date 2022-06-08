@@ -18,8 +18,16 @@ use App\Http\Controllers\GroupController;
 Route::get('/', function () {
     return view('welcome');
 });
+//Laravel-specific authentication 
+//->middleware('auth')
+Route::resource('profiles', ProfileController::class)->middleware('auth');
+Route::resource('groups', GroupController::class)->middleware('auth');
 
-Route::resource('profiles', ProfileController::class);
 
-Route::resource('groups', GroupController::class);
 
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';

@@ -1,4 +1,4 @@
-@extends ('profiles.layout')
+@extends ('dashboard')
 @section ('content')
 
 <h3>Show Group Detail</h3>
@@ -15,12 +15,12 @@
       
             <th></th>
     </tr>
-  </thead>
+  </thead>                      
   <tbody>
    
   @if ($errors->any())
 <div class ="toast toast-error">
-    @foreach ($errors->all() as $error)
+    @foreach ($errors->all() as $error) 
     <span> {{$errors}} </span> <br />
   @endforeach
 </div>

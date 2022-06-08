@@ -1,4 +1,4 @@
-@extends ('profiles.layout')
+@extends ('dashboard')
 @section('content')
 
 <h3> Profiles </h3>
@@ -26,8 +26,7 @@
       <td>{{$profile->last_name}}</td>
       <td>{{$profile->email}}</td>
       <td>{{$profile->phone_number}}</td>
-            <!-- <td>{{$profile->updated_at}}</td>
-              <td>{{$profile->created_at}}</td> -->
+         
            <td><a href="{{ route('profiles.show', $profile->id) }}">Show Detail</a></td>
             <td><a href="{{ route('profiles.edit', $profile->id) }}">Edit</a></td>
 
