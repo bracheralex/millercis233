@@ -15,15 +15,14 @@ use App\Http\Controllers\GroupController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-//Laravel-specific authentication 
-//->middleware('auth')
-Route::resource('profiles', ProfileController::class)->middleware('auth');
-Route::resource('groups', GroupController::class)->middleware('auth');
-
-
+Route::resource('profiles', 'ProfileController');
+Route::get('/playground', \App\Http\Livewire\Playground::class);
+Route::get('/', \App\Http\Livewire\Profiles::class);
+Route::view('profiles','admin.profiles');
+//Route::get('/livewire.profiles', function () {
+ //   return view('livewire.profiles');
+//});
+//Route::livewire('/', 'profiles');
 
 
 Route::get('/dashboard', function () {

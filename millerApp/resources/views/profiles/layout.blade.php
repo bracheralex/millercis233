@@ -28,7 +28,7 @@
             @endif
 
             <div class ="container">
-            <h1>Profiles App</h1>
+            <h1>Profiles App</h1>          
             @if (session()-> get ('success'))
             <div class="toast toast-success">
                 {{session()->get ('success')}}
