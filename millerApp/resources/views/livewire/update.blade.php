@@ -5,7 +5,7 @@
 
     <div class="panel-body">
         <div class="form-inline">
-            <input type="hidden" wire:model="selected_id">
+            <input type="hidden" wire:model="id">
             <div class="input-group">
                 First Name
                 <input wire:model="first_name" type="text" class="form-control input-sm">

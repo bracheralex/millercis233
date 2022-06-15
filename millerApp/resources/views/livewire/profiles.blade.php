@@ -76,7 +76,7 @@ Profiles
       <td>{{$profile->email}}</td>
       <td>{{$profile->phone_number}}</td> 
 
-            <td class="border px-4 py-2"><button type="button" wire:click="edit({{ $profile->id }})" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Edit</button></td>
+      <td class="border px-4 py-2"><button type="button" wire:click="edit({{ $profile->id }})" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Edit</button></td>
       <td class="border px-4 py-2"><button type="button" wire:click="destroy({{ $profile->id }})" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Delete</button></td>
 
     </tr>

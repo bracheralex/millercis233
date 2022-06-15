@@ -22,6 +22,7 @@ protected $paginationTheme = 'bootstrap';
       public $per_page = 10;
       public $first_name, $last_name, $email, $phone_number;
        public $updateMode = false;
+       public $selected_id;
 
         protected $queryString = [
             'search' => ['except' => '' ],
@@ -46,41 +47,26 @@ $this->phone = null;
 
  public function store(){
     $this->validate([
-        'first_name' => 'required|min:20',
-         'last_name' => 'required|min:40',
+        'first_name' => 'required|min:2',
+         'last_name' => 'required|min:2',
          'email' => 'required',
         'phone_number' => 'required'
     ]);
 
      Profile::create([
-    'first_name' => 'first_name',
-    'last_name' => 'last_name',
-    'email' => 'email',
-    'phone_number' => 'phone_number'
+    'first_name' => $this->first_name,
+    'last_name' => $this->last_name,
+    'email' => $this->email,
+    'phone_number' =>$this->phone_number
      ]);
      $this->resetInput();
  }
 
-  public function edit($id)
-   {
-    $profiles = Profile::findOrFail($id);
-    $this->selected_id =$id;
-    $this->first_name = $profiles->first_name;
-    $this->last_name = $profiles->last_name;
-    $this->email = $profiles->email;
-    $this->phone_number = $profiles->phone_number;
-
-    $this->updateMode = true;
-
-   }
-
-   
-   public function update($id)
+   public function update()
    {
 $this->validate([
-    'selected_id' => 'required|numberic',
-     'first_name' => 'required|min:20',
-         'last_name' => 'required|min:40',
+     'first_name' => 'required|min:2',
+         'last_name' => 'required|min:2',
          'email' => 'required',
         'phone_number' => 'required'
 ]);
@@ -95,6 +81,23 @@ if ($this->selected_id){
     $this->resetInput();$this->updateMode = false;
 }
    }
+
+
+  public function edit($id)
+   {
+    $profiles = Profile::findOrFail($id);
+    $this->selected_id=$id;
+    $this->first_name = $profiles->first_name;
+    $this->last_name = $profiles->last_name;
+    $this->email = $profiles->email;
+    $this->phone_number = $profiles->phone_number;
+
+    $this->updateMode = true;
+
+   }
+
+   
+
 
     public function doSort($field, $direction) {
         $this->sortBy = $field;
