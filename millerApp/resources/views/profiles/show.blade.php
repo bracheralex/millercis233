@@ -1,14 +1,10 @@
-@extends ('profiles.layout')
+@extends ('dashboard')
 @section ('content')
 
 <h3>Show Profile Detail</h3>
 
 
 <table class="table table-striped table-hover">
-
-<!-- <p>{{$profile->first_name}}</p>
- <td>{{$profile->email}}</td> -->
-
 
  <thead>
     <tr>
@@ -42,11 +38,6 @@
   <td>{{$handle->social_name}}:{{$handle->name}}</td>
  <td> {{$handle->email}} </td>
   @endforeach
-
-  @if($profile->handles === 0 ){
-   echo "No handles found"
-  }
-  @endif
 
   @foreach($profile->groups as $group)
   <td> {{$group->name}}</td>

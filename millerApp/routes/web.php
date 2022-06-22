@@ -15,11 +15,18 @@ use App\Http\Controllers\GroupController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('profiles', 'ProfileController');
+Route::get('/playground', \App\Http\Livewire\Playground::class);
+Route::get('/', \App\Http\Livewire\Profiles::class);
+Route::view('profiles','admin.profiles');
+//Route::get('/livewire.profiles', function () {
+ //   return view('livewire.profiles');
+//});
+//Route::livewire('/', 'profiles');
 
-Route::resource('profiles', ProfileController::class);
 
-Route::resource('groups', GroupController::class);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
+require __DIR__.'/auth.php';
