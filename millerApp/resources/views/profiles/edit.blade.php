@@ -1,4 +1,4 @@
-@extends('profiles.layout')
+@extends('dashboard')
 
 @section('content')
 
